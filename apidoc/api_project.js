@@ -1,0 +1,14 @@
+define({
+  "name": "Backend Apis",
+  "version": "1.0.0",
+  "description": "Base url http://16.171.30.210:3000",
+  "sampleUrl": false,
+  "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
+  "generator": {
+    "name": "apidoc",
+    "time": "2023-07-17T17:32:11.741Z",
+    "url": "https://apidocjs.com",
+    "version": "0.29.0"
+  }
+});

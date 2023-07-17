@@ -1,0 +1,289 @@
+define({ "api": [
+  {
+    "type": "post",
+    "url": "/api/app/user/coin-update",
+    "title": "Coin Update",
+    "version": "1.0.0",
+    "name": "Coin_Update",
+    "group": "App-auth",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "coin",
+            "description": "<p>Coin.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Normal-signUp-Request-Example:",
+          "content": "{\"coin\":20,\"type\":\"Wheel\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\"status\":200,\"statusText\":\"SUCCESS\",\"message\":\"Coin Updated Succsessfully\",\"data\":{\"user\":{\"_id\":\"6453f2a423db131d315b5c43\",\"coin\":20,\"email\":\"qwe@gmail.com\",\"password\":\"$2b$10$OvGaVXf9P6kJ05.24YlcG.bsJFcxZV2IrVHEkpRLxDhSKXGfj.WSG\",\"userName\":\"Test\",\"created_at\":\"2023-05-04T18:00:04.154Z\",\"updated_at\":\"2023-05-04T18:00:04.154Z\",\"__v\":0,\"id\":\"6453f2a423db131d315b5c43\"},\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTNmMmE0MjNkYjEzMWQzMTViNWM0MyIsImVtYWlsIjoicXdlQGdtYWlsLmNvbSIsImlhdCI6MTY4MzIyNDI0MywiZXhwIjoxNjgzMzEwNjQzfQ.wN4k_PkVohdmt2ctzZorO_bmSfIsHCeuorh1s6h8np8\"},\"exeTime\":566}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response Not Found",
+          "content": "{\"status\":404,\"statusText\":\"NOTFOUND\",\"message\":\"User not exist ,Please check the credentials\",\"data\":{},\"exeTime\":271}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/controllers/User/UserController.ts",
+    "groupTitle": "App-auth"
+  },
+  {
+    "type": "post",
+    "url": "/api/app/auth/forget-password",
+    "title": "Forget Password",
+    "version": "1.0.0",
+    "name": "Forget_Password",
+    "group": "App-auth",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\"userName\":\"qwe@gmail.com\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\"status\":200,\"statusText\":\"SUCCESS\",\"message\":\"Send OTP on this email pls verify the OTP \",\"data\":{},\"exeTime\":258}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response Not Found",
+          "content": "{\"status\":404,\"statusText\":\"NOTFOUND\",\"message\":\"User not exist with this email\",\"data\":{},\"exeTime\":331}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/controllers/User/AuthController.ts",
+    "groupTitle": "App-auth"
+  },
+  {
+    "type": "post",
+    "url": "/api/app/auth/login",
+    "title": "Login",
+    "version": "1.0.0",
+    "name": "Login",
+    "group": "App-auth",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>User Type (&quot;Expact,Psychologist&quot;).</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Normal-signUp-Request-Example:",
+          "content": "{\"userName\":\"qwe@gmail.com\",\"password\":\"abc123\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\"status\":200,\"statusText\":\"SUCCESS\",\"message\":\"Login Successfully\",\"data\":{\"user\":{\"_id\":\"6453f2a423db131d315b5c43\",\"email\":\"qwe@gmail.com\",\"password\":\"$2b$10$OvGaVXf9P6kJ05.24YlcG.bsJFcxZV2IrVHEkpRLxDhSKXGfj.WSG\",\"userName\":\"Test\",\"created_at\":\"2023-05-04T18:00:04.154Z\",\"updated_at\":\"2023-05-04T18:00:04.154Z\",\"__v\":0,\"id\":\"6453f2a423db131d315b5c43\"},\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTNmMmE0MjNkYjEzMWQzMTViNWM0MyIsImVtYWlsIjoicXdlQGdtYWlsLmNvbSIsImlhdCI6MTY4MzIyNDI0MywiZXhwIjoxNjgzMzEwNjQzfQ.wN4k_PkVohdmt2ctzZorO_bmSfIsHCeuorh1s6h8np8\"},\"exeTime\":566}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response Not Found",
+          "content": "{\"status\":404,\"statusText\":\"NOTFOUND\",\"message\":\"User not exist ,Please check the credentials\",\"data\":{},\"exeTime\":271}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/controllers/User/AuthController.ts",
+    "groupTitle": "App-auth"
+  },
+  {
+    "type": "post",
+    "url": "/api/app/auth/reset-password",
+    "title": "Reset Password",
+    "version": "1.0.0",
+    "name": "Reset_Password",
+    "group": "App-auth",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\"userName\":\"qwe@gmail.com\", \"password\":\"abc124\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\"status\":200,\"statusText\":\"SUCCESS\",\"message\":\"Password Changed Successfully\",\"data\":{},\"exeTime\":433}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response Not Found",
+          "content": "{\"status\":404,\"statusText\":\"NOTFOUND\",\"message\":\"User not exist with this email\",\"data\":{},\"exeTime\":331}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/controllers/User/AuthController.ts",
+    "groupTitle": "App-auth"
+  },
+  {
+    "type": "post",
+    "url": "/api/app/auth/verify-otp",
+    "title": "Verify OTP",
+    "version": "1.0.0",
+    "name": "Verify_OTP",
+    "group": "App-auth",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "otp",
+            "description": "<p>OTP.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\"userName\":\"qwe@gmail.com\", \"otp\":\"1234\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\"status\":200,\"statusText\":\"SUCCESS\",\"message\":\"Verify OTP Successfully\",\"data\":{},\"exeTime\":232}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response Not Found",
+          "content": "{\"status\":404,\"statusText\":\"NOTFOUND\",\"message\":\"User not exist with this email\",\"data\":{},\"exeTime\":331}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/controllers/User/AuthController.ts",
+    "groupTitle": "App-auth"
+  },
+  {
+    "type": "get",
+    "url": "/api/common/category-list",
+    "title": "Game Category List",
+    "version": "1.0.0",
+    "name": "Game_Category",
+    "group": "Common",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"status\": 200,\n    \"statusText\": \"SUCCESS\",\n    \"message\": \"Category List\",\n    \"data\": {\n        \"data\": [\n            {\n                \"is_active\": true,\n                \"is_delete\": false,\n                \"_id\": \"64b43883050cfc72e218f4e9\",\n                \"name\": \"hh\",\n                \"created_at\": \"2023-07-16T18:35:47.293Z\",\n                \"updated_at\": \"2023-07-16T18:35:47.293Z\",\n                \"__v\": 0\n            }\n        ]\n    },\n    \"exeTime\": 198\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/controllers/CommonController.ts",
+    "groupTitle": "Common"
+  }
+] });
